@@ -40,15 +40,21 @@ diet-goal-predictor/
 cd diet-goal-predictor</pre>
     </li>
 
-    Set up virtual environment
-      python -m venv venv
+ </ol>
+ <ol>
+
+   <li><strong> Set up virtual environment </strong><br>
+     <pre> python -m venv venv
       source venv/bin/activate  # On Windows use venv\Scripts\activate</pre>
 
+</ol>
 
-    Install dependencies
-      pip install -r requirements.txt
-      If you don’t have a requirements file:
-      pip install flask scikit-learn pandas numpy joblib
+<ol>
+
+   <li><strong> Install dependencies </strong><br>
+    <pre>  pip install -r requirements.txt </pre>
+      <li><strong>  If you don’t have a requirements file:</strong><br>
+      <pre>pip install flask scikit-learn pandas numpy joblib <pre>
     
   </ol>
 
