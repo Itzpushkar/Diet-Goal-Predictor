@@ -1,8 +1,8 @@
-🥗 Diet Goal Predictor
+<!-- <h2> 🥗 Diet Goal Predictor </h2>
 
-A smart and intuitive web application that predicts your health goal – whether it's Weight Loss, Muscle Gain, or Maintenance – based on your nutritional intake and body profile using Machine Learning.
+<p>  smart and intuitive web application that predicts your health goal – whether it's Weight Loss, Muscle Gain, or Maintenance – based on your nutritional intake and body profile using Machine Learning. </p>
 
-🌟 Features
+<h3> 🌟 Features </h3>
 
 📊 Trained on real nutritional data from nutrition.csv
 
@@ -18,19 +18,19 @@ A smart and intuitive web application that predicts your health goal – whether
 
 💾 All trained models and scalers are persisted with joblib
 
-📂 Project Structure
-diet-goal-predictor/
-│
-├── app.py                      # Flask web application
-├── diet_prediction.py         # Command-line prediction interface
-├── diet_recommendation.py     # Model training script
-├── nutrition.csv              # Dataset
-├── templates/
-│   └── index.html             # Frontend HTML (Tailwind CSS)
-├── .gitignore
-└── venv/                      # Virtual environment (not included)
+</h3>📂 Project Structure </h3>
+diet-goal-predictor/ <br>
+│ <br>
+├── app.py                      # Flask web application <br>
+├── diet_prediction.py         # Command-line prediction interface <br>
+├── diet_recommendation.py     # Model training script <br>
+├── nutrition.csv              # Dataset <br>
+├── templates/ <br>
+│   └── index.html             # Frontend HTML (Tailwind CSS) <br>
+├── .gitignore <br>
+└── venv/                      # Virtual environment (not included) <br>
 
-🚀 Getting Started
+<h3> 🚀 Getting Started </h3>
 1. Clone the repository
 git clone https://github.com/your-username/diet-goal-predictor.git
 cd diet-goal-predictor
@@ -51,7 +51,7 @@ pandas
 numpy
 joblib
 
-🧠 Model Training
+<h3>🧠 Model Training </h3>
 
 To train the ML model using the nutrition.csv dataset:
 
@@ -74,7 +74,7 @@ Save the best performing model + scaler, encoder, and feature columns
 
 🔍 Predict from Command Line
 
-Run:
+<b> Run: </b>
 
 python diet_prediction.py
 
@@ -92,7 +92,7 @@ Sugar: 6
 Water: 60
 
 
-📢 Output:
+<b>📢 Output: </b>
 
 🥗 Recommended Health Goal: Muscle Gain
 
@@ -103,9 +103,8 @@ python app.py
 
 Visit: http://127.0.0.1:5000
 
-UI Snapshot:
 
-📦 Files Saved After Training
+<h4>📦 Files Saved After Training </h4>
 
 logistic_regression_diet_model.joblib or randomforest_diet_model.joblib
 
@@ -117,7 +116,7 @@ label_encoder.joblib – for decoding output
 
 best_model_name.joblib – used by web app for dynamic loading
 
-🤖 Prediction Logic
+<h3> 🤖 Prediction Logic </h3>
 
 The health goal is assigned using nutrient thresholds:
 
@@ -125,19 +124,204 @@ if calories < median and fat < median → "Weight Loss"
 elif protein > median and calories > median → "Muscle Gain"
 else → "Maintenance"
 
-📌 Future Improvements
-
-🧬 Use advanced nutrition datasets (e.g. USDA)
-
-📱 Make the app mobile-friendly (PWA)
-
-🗄️ Store user data and predictions in a DB
-
-📈 Model evaluation dashboard
-
-✅ Add unit testing and CI/CD
 
 Made with love by ❤️ Kikani Pushkar 
 Let's connect on:
     LinkedIn: https://www.linkedin.com/in/pushkar-kikani-984b0a34a/
-    Instagram: https://instagram.com/itzpushkar_21
+    Instagram: https://instagram.com/itzpushkar_21 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🥗 Diet Goal Predictor</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #f9fafb;
+      color: #222;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #047857;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      border-left: 5px solid #10b981;
+      padding-left: 10px;
+      margin-top: 2rem;
+    }
+    code, pre {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: "Courier New", monospace;
+    }
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    ul {
+      list-style-type: "🌿 ";
+      margin-left: 1.5rem;
+    }
+    a {
+      color: #047857;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .highlight {
+      background-color: #ecfdf5;
+      border-left: 4px solid #10b981;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🥗 Diet Goal Predictor</h1>
+
+  <p>
+    A <strong>smart and intuitive web application</strong> that predicts your health goal – 
+    whether it's <strong>Weight Loss</strong>, <strong>Muscle Gain</strong>, or 
+    <strong>Maintenance</strong> – based on your nutritional intake and body profile using 
+    <strong>Machine Learning</strong>.
+  </p>
+
+  <h2>🌟 Features</h2>
+  <ul>
+    <li>📊 Trained on real nutritional data from <code>nutrition.csv</code></li>
+    <li>🤖 ML-based prediction using Logistic Regression or Random Forest</li>
+    <li>📈 Input scaling via <code>StandardScaler</code> for improved performance</li>
+    <li>🧠 Dynamic model loading for flexibility and performance</li>
+    <li>🧪 CLI and Web (Flask + Tailwind CSS) support</li>
+    <li>⚖️ Balanced dataset ensuring fair goal distribution</li>
+    <li>💾 Model and scaler persistence using <code>joblib</code></li>
+  </ul>
+
+  <h2>📂 Project Structure</h2>
+  <pre>
+diet-goal-predictor/
+│
+├── app.py                  # Flask web application
+├── diet_prediction.py      # Command-line prediction interface
+├── diet_recommendation.py  # Model training script
+├── nutrition.csv           # Dataset
+├── templates/
+│   └── index.html          # Frontend (Tailwind CSS)
+├── .gitignore
+└── venv/                   # Virtual environment (excluded)
+  </pre>
+
+  <h2>🚀 Getting Started</h2>
+
+  <ol>
+    <li><strong>Clone the repository</strong><br>
+      <pre>git clone https://github.com/your-username/diet-goal-predictor.git
+cd diet-goal-predictor</pre>
+    </li>
+
+    <li><strong>Set up virtual environment</strong><br>
+      <pre>python -m venv venv
+source venv/bin/activate  # On Windows use venv\Scripts\activate</pre>
+    </li>
+
+    <li><strong>Install dependencies</strong><br>
+      <pre>pip install -r requirements.txt</pre>
+      If you don’t have a requirements file:
+      <pre>pip install flask scikit-learn pandas numpy joblib</pre>
+    </li>
+  </ol>
+
+  <h2>🧠 Model Training</h2>
+  <p>Train the ML model using your <code>nutrition.csv</code> dataset:</p>
+  <pre>python diet_recommendation.py</pre>
+
+  <div class="highlight">
+    ✔️ This will:
+    <ul>
+      <li>Clean and process the dataset</li>
+      <li>Create synthetic <code>Age</code> and <code>BMI</code> columns</li>
+      <li>Assign health goals logically</li>
+      <li>Balance dataset classes</li>
+      <li>Train both Logistic Regression & Random Forest models</li>
+      <li>Save the best-performing model and related artifacts</li>
+    </ul>
+  </div>
+
+  <h2>🔍 Predict from Command Line</h2>
+  <p>Run:</p>
+  <pre>python diet_prediction.py</pre>
+  <p>Enter values when prompted (example):</p>
+  <pre>
+Age: 28
+BMI: 23.5
+Calories: 2200
+Protein: 15
+Total Fat: 3
+Carbohydrate: 25
+Fiber: 4
+Sugar: 6
+Water: 60
+  </pre>
+
+  <div class="highlight">
+    📢 Output: <strong>🥗 Recommended Health Goal: Muscle Gain</strong>
+  </div>
+
+  <h2>🌐 Web App (Flask + Tailwind CSS)</h2>
+  <p>Run the Flask app:</p>
+  <pre>python app.py</pre>
+  <p>Then visit <a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a></p>
+
+  <h2>📦 Files Saved After Training</h2>
+  <ul>
+    <li><code>logistic_regression_diet_model.joblib</code> or <code>randomforest_diet_model.joblib</code></li>
+    <li><code>scaler.joblib</code> – input scaling</li>
+    <li><code>feature_cols.joblib</code> – list of model features</li>
+    <li><code>label_encoder.joblib</code> – label decoding</li>
+    <li><code>best_model_name.joblib</code> – used for dynamic loading</li>
+  </ul>
+
+  <h2>🤖 Prediction Logic</h2>
+  <pre>
+if calories < median and fat < median → "Weight Loss"
+elif protein > median and calories > median → "Muscle Gain"
+else → "Maintenance"
+  </pre>
+
+  <h2>📌 Future Improvements</h2>
+  <ul>
+    <li>🧬 Integrate advanced nutrition datasets (e.g. USDA)</li>
+    <li>📱 Convert to a mobile-friendly Progressive Web App (PWA)</li>
+    <li>🗄️ Store user data and predictions in a database</li>
+    <li>📈 Add model evaluation dashboard</li>
+    <li>✅ Implement automated unit testing & CI/CD</li>
+  </ul>
+
+  <footer>
+    <p>Made with ❤️ by <strong>Kikani Pushkar</strong></p>
+    <p>
+      <a href="https://www.linkedin.com/in/pushkar-kikani-984b0a34a/" target="_blank">LinkedIn</a> |
+      <a href="https://instagram.com/itzpushkar_21" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
