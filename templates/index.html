@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diet Goal Predictor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-green-100 via-green-200 to-green-100 flex items-center justify-center min-h-screen font-sans">
+  <div class="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-6xl flex flex-row gap-10 items-start">
+    
+    <!-- Left Side: Form -->
+    <div class="flex-1">
+      <h1 class="text-3xl font-extrabold mb-6 text-green-800 text-center">🥗 Diet Goal Predictor</h1>
+
+      <form id="dietForm" class="grid grid-cols-2 gap-4">
+        <!-- Age & BMI -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+          <input type="number" name="Age" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">BMI</label>
+          <input type="number" step="0.1" name="BMI" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+
+        <!-- Nutrients -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Calories</label>
+          <input type="number" name="calories" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Protein</label>
+          <input type="number" name="protein" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Total Fat</label>
+          <input type="number" name="total_fat" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Carbohydrate</label>
+          <input type="number" name="carbohydrate" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Fiber</label>
+          <input type="number" name="fiber" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Sugar</label>
+          <input type="number" name="sugar" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Water</label>
+          <input type="number" name="water" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-span-2">
+          <button type="submit" 
+                  class="w-full py-3 mt-2 bg-gradient-to-r from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+            Predict Goal
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Right Side: Result Box -->
+    <div class="flex-1 bg-green-50 rounded-2xl p-6 shadow-inner flex flex-col items-center justify-center">
+      <h2 class="text-2xl font-bold text-green-800 mb-4">Your Health Goal</h2>
+      <div id="result" class="text-center text-3xl font-extrabold text-green-900">🥗 Pending...</div>
+      <div class="mt-4 text-gray-600 text-sm">The result will appear here after you submit your details.</div>
+    </div>
+
+  </div>
+
+  <script>
+
+    // Add an event listener to the form submission and also preventing the default form submission
+
+    document.getElementById("dietForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+    // Taking all form data and storing it in key-value pair
+
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+
+    // Sending request (POST) to Flask backend for generating output
+
+      const res = await fetch("/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+    // Creating the element to store the result coming from the backend
+    
+      const resultDiv = document.getElementById("result");
+      const response = await res.json();
+
+      if (response.status === "success") {
+        resultDiv.textContent = "🥗 Recommended Goal: " + response.goal;
+      } else {
+        resultDiv.textContent = "❌ Error: " + response.message;
+      }
+    });
+  </script>
+</body>
+</html>
