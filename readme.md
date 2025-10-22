@@ -130,70 +130,6 @@ Let's connect on:
     LinkedIn: https://www.linkedin.com/in/pushkar-kikani-984b0a34a/
     Instagram: https://instagram.com/itzpushkar_21 -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🥗 Diet Goal Predictor</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background-color: #f9fafb;
-      color: #222;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      color: #047857;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      border-left: 5px solid #10b981;
-      padding-left: 10px;
-      margin-top: 2rem;
-    }
-    code, pre {
-      background: #f3f4f6;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: "Courier New", monospace;
-    }
-    pre {
-      padding: 1rem;
-      overflow-x: auto;
-    }
-    ul {
-      list-style-type: "🌿 ";
-      margin-left: 1.5rem;
-    }
-    a {
-      color: #047857;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .highlight {
-      background-color: #ecfdf5;
-      border-left: 4px solid #10b981;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
 
   <h1>🥗 Diet Goal Predictor</h1>
 
@@ -323,5 +259,3 @@ else → "Maintenance"
     </p>
   </footer>
 
-</body>
-</html>
