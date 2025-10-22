@@ -35,15 +35,13 @@ diet-goal-predictor/
   <h2>🚀 Getting Started</h2>
 
   <ol>
-    <li><strong>Clone the repository</strong><br>
+    <strong>Clone the repository</strong><br>
       <pre>git clone https://github.com/your-username/diet-goal-predictor.git
 cd diet-goal-predictor</pre>
-    </li>
-
- </ol>
+   </ol>
  <ol>
 
-   <li><strong> Set up virtual environment </strong><br>
+   <strong> Set up virtual environment </strong><br>
      <pre>
 python -m venv venv
 source venv/bin/activate  # On Windows use venv\Scripts\activate</pre>
@@ -52,9 +50,9 @@ source venv/bin/activate  # On Windows use venv\Scripts\activate</pre>
 
 <ol>
 
-   <li><strong> Install dependencies </strong><br>
+   <strong> Install dependencies </strong><br>
     <pre>pip install -r requirements.txt </pre>
-      <li><strong>  If you don’t have a requirements file:</strong><br>
+      <strong>  If you don’t have a requirements file:</strong><br>
       <pre>pip install flask scikit-learn pandas numpy joblib <pre>
   </ol>
 
